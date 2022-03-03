@@ -36,7 +36,7 @@ d:So/ProtonBeam/BeamAngularSpreadY       = 0.000001 rad
 i:So/ProtonBeam/NumberOfHistoriesInRun   = 1000
 i:So/ProtonBeam/PreCheckShowParticleCountAtInterval  = 200000
 
-s:Sc/WaterDose/OutputFile = "/storage1/fs1/tiezhizhang/Active/shuangzhou/ct_data/test"
+s:Sc/WaterDose/OutputFile = "yourPath/test"
 s:Sc/WaterDose/OutputType = "DICOM"
 s:Sc/WaterDose/Quantity    = "DoseToMedium"
 s:Sc/WaterDose/Component   = "WaterTank"
