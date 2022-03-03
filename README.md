@@ -1,4 +1,6 @@
 # centos_topas
+Install topas in centOS7 within a docker container
+
 HOW TO USE
 - Download topas and save the two zip files into your working directory (topas_3_7_centos7.tar.gz.part_1 topas_3_7_centos7.tar.gz.part_2)
 - Put your text file into the same directory i.e. hello.txt
@@ -7,5 +9,5 @@ HOW TO USE
 - ```docker push civerjia/centos_topas:topas```
 - ```docker run -it -v pathHost:pathImage  civerjia/centos_topas:topas /opt/app-root/src/topas/bin/topas /opt/app-root/src/hello.txt```
 
-
+# This image was designed to run in WUSTL RIS cluster
 
