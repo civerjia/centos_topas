@@ -1,5 +1,6 @@
 # centos_topas
 Install topas in centOS7 within a docker container
+
 Reference: 
 - https://docs.docker.com/engine/reference/commandline/run/
 - https://docs.docker.com/engine/reference/builder/#env
@@ -20,6 +21,7 @@ RIS wiki
 - https://docs.ris.wustl.edu/doc/compute/recipes/ris-compute-storage-volumes.html?highlight=path
 - https://docs.ris.wustl.edu/doc/compute/recipes/job-execution-examples.html?highlight=job
 - https://docs.ris.wustl.edu/doc/compute/recipes/job-execution-examples.html
+
 Commands after docker push:
 - login RIS
 - Mount volume host:image, path should the same as the path [s:Sc/WaterDose/OutputFile] in txt file ```export LSF_DOCKER_VOLUMES="/storage1/fs1/yourPath:/storage1/fs1/yourPath"```
