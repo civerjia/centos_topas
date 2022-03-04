@@ -32,12 +32,10 @@ export LSF_DOCKER_VOLUMES="$HOME:$HOME $STORAGE1:$STORAGE1 $SCRATCH1:$SCRATCH1"`
 
 
 disk quota exceed -> block-size almost full, check block size with this:
-```mmlsquota --block-size auto -u shuangzhou cache1-fs1:home1```
+```mmlsquota --block-size auto -u yourusername cache1-fs1:home1```
 ```echo $HOME```
 ```ls -lh```
-```cd /home/shuang.zhou```
+remove useless files and folders
 ```rm filename```
 ```rm -r folder/```
-show the size used
-```du -sh --apparent-size /home/shuang.zhou```
 
