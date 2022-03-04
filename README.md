@@ -24,28 +24,19 @@ RIS wiki
 
 Commands after docker push:
 - login RIS
-- Mount volume host:image, path should the same as the path [s:Sc/WaterDose/OutputFile] in txt file ```export LSF_DOCKER_VOLUMES="/storage1/fs1/yourPath:/storage1/fs1/yourPath"```
--interactive ```bsub -R 'select[model==Intel_Xeon_Gold6242CPU280GHz]' -R 'rusage[mem=32GB]' -Is -q general-interactive -a 'docker(civerjia/centos_topas:topas)' /opt/app-root/src/topas/bin/topas /opt/app-root/src/hello.txt```
--  Non-Interactive ```bsub -R 'select[model==Intel_Xeon_Gold6242CPU280GHz]' -R 'rusage[mem=32GB]' -q general -a 'docker(civerjia/centos_topas:topas)' /opt/app-root/src/topas/bin/topas /opt/app-root/src/hello.txt```
--  ```bsub -oo ${HOME}/storage1/fs1/tiezhizhang/Active/shuangzhou/output_msg -R 'rusage[mem=1GB]' -q general -a 'docker(civerjia/centos_topas:topas)' /opt/app-root/src/topas/bin/topas /opt/app-root/src/E20.00.txt```
-
-
-export SCRATCH1=/scratch1/fs1/joe.user
+- Mount volume host:image `export SCRATCH1=/scratch1/fs1/joe.user
 export STORAGE1=/storage1/fs1/joe.user/Active
-PATH=/opt/app-root/src/:$PATH
-export SCRATCH1=/scratch1/fs1/tiezhizhang
-export STORAGE1=/storage1/fs1/tiezhizhang/Active
-export LSF_DOCKER_VOLUMES="$HOME:$HOME $STORAGE1:$STORAGE1 $SCRATCH1:$SCRATCH1"
-
-
-mmlsquota -u shuangzhou cache1-fs1:home1
-mmlsquota -g compute-tiezhizhang scratch1-fs1
+export LSF_DOCKER_VOLUMES="$HOME:$HOME $STORAGE1:$STORAGE1 $SCRATCH1:$SCRATCH1"`
+-interactive ```bsub -R 'select[model==Intel_Xeon_Gold6242CPU280GHz]' -R 'rusage[mem=32GB]' -Is -q general-interactive -a 'docker(civerjia/centos_topas:topas)' /opt/app-root/src/topas/bin/topas /opt/app-root/src/hello.txt```
+-  Non-Interactive ```bsub -oo /storage1/fs1/joe.user/Active/YourPathToSave/output/msg -R 'select[model==Intel_Xeon_Gold6242CPU280GHz]' -R 'rusage[mem=32GB]' -q general -a 'docker(civerjia/centos_topas:topas)' /opt/app-root/src/topas/bin/topas /opt/app-root/src/hello.txt```
+-  ```bsub -oo /storage1/fs1/tiezhizhang/Active/shuangzhou/output_msg -R 'select[model==Intel_Xeon_Gold6242CPU280GHz]' -R 'rusage[mem=32GB]' -q general -a 'docker(civerjia/centos_topas:topas)' /opt/app-root/src/topas/bin/topas /opt/app-root/src/E200.00.txt```
 
 disk quota exceed -> block-size almost full, check block size with this:
 ```mmlsquota --block-size auto -u shuangzhou cache1-fs1:home1```
 ```echo $HOME```
+```ls -lh```
 ```cd /home/shuang.zhou```
-```rm -filename```
+```rm filename```
 ```rm -r folder/```
 show the size used
 ```du -sh --apparent-size /home/shuang.zhou```
