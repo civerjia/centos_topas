@@ -27,4 +27,10 @@ Commands after docker push:
 - Mount volume host:image, path should the same as the path [s:Sc/WaterDose/OutputFile] in txt file ```export LSF_DOCKER_VOLUMES="/storage1/fs1/yourPath:/storage1/fs1/yourPath"```
 - Non-interactive ```bsub -R 'select[model==Intel_Xeon_Gold6242CPU280GHz]' -R 'rusage[mem=32GB]' -Is -q general-interactive -a 'docker(civerjia/centos_topas:topas)' /opt/app-root/src/topas/bin/topas /opt/app-root/src/hello.txt```
 - Interactive ```bsub -R 'select[model==Intel_Xeon_Gold6242CPU280GHz]' -R 'rusage[mem=32GB]' -q general -a 'docker(civerjia/centos_topas:topas)' /opt/app-root/src/topas/bin/topas /opt/app-root/src/hello.txt```
-bsub -R 'rusage[mem=1GB]' -Is -q general-interactive -a 'docker(civerjia/centos_topas:topas)' /opt/app-root/src/topas/bin/topas /opt/app-root/src/E20.00.txt
+bsub -R 'rusage[mem=1GB]' -q general -a 'docker(civerjia/centos_topas:topas)' /opt/app-root/src/topas/bin/topas /opt/app-root/src/E20.00.txt
+
+export SCRATCH1=/scratch1/fs1/joe.user
+export STORAGE1=/storage1/fs1/joe.user/Active
+export STORAGE1=/scratch1/fs1/tiezhizhang/Active
+export STORAGE1=/storage1/fs1/tiezhizhang/Active
+export LSF_DOCKER_VOLUMES="$HOME:$HOME $STORAGE1:$STORAGE1 $SCRATCH1:$SCRATCH1"
