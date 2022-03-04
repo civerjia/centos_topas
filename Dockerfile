@@ -59,17 +59,12 @@ RUN cd ~
 # ENV TOPAS_G4_DATA_DIR=/opt/app-root/src/G4Data
 ARG TOPAS_G4_DATA_DIR=/opt/app-root/src
 ENV TOPAS_G4_DATA_DIR=/opt/app-root/src
+# this line maynot work, the previous two lines are usefull
 RUN TOPAS_G4_DATA_DIR=/opt/app-root/src
 RUN export TOPAS_G4_DATA_DIR
-COPY hello.txt /opt/app-root/src/
+# copy txt files from host to image
+COPY *.txt /opt/app-root/src/
 
 
-RUN pwd
-RUN ls -a
 # RUN pwd
-# check Environmental Variables
-
-# RUN printenv
-# # run topas
-# RUN cd /opt/app-root/src/
-# RUN  /opt/app-root/src/topas/bin/topas hello.txt
+# RUN ls -a
