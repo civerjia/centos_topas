@@ -26,4 +26,4 @@ Commands after docker push:
 - login RIS
 - Mount volume host:image, path should the same as the path [s:Sc/WaterDose/OutputFile] in txt file ```export LSF_DOCKER_VOLUMES="/storage1/fs1/yourPath:/storage1/fs1/yourPath"```
 - Non-interactive ```bsub -R 'select[model==Intel_Xeon_Gold6242CPU280GHz]' -R 'rusage[mem=32GB]' -Is -q general-interactive -a 'docker(civerjia/centos_topas:topas)' /opt/app-root/src/topas/bin/topas /opt/app-root/src/hello.txt```
-- Interactive ```bsub -R 'select[model==Intel_Xeon_Gold6242CPU280GHz]' -R 'rusage[mem=32GB]' -Is -q general -a 'docker(civerjia/centos_topas:topas)' /opt/app-root/src/topas/bin/topas /opt/app-root/src/hello.txt```
+- Interactive ```bsub -R 'select[model==Intel_Xeon_Gold6242CPU280GHz]' -R 'rusage[mem=32GB]' -q general -a 'docker(civerjia/centos_topas:topas)' /opt/app-root/src/topas/bin/topas /opt/app-root/src/hello.txt```
