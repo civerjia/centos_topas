@@ -27,9 +27,9 @@ Commands after docker push:
 - Mount volume host:image `export SCRATCH1=/scratch1/fs1/joe.user
 export STORAGE1=/storage1/fs1/joe.user/Active
 export LSF_DOCKER_VOLUMES="$HOME:$HOME $STORAGE1:$STORAGE1 $SCRATCH1:$SCRATCH1"`
-- interactive ```bsub -R 'select[model==Intel_Xeon_Gold6242CPU280GHz]' -R 'rusage[mem=32GB]' -Is -q general-interactive -a 'docker(civerjia/centos_topas:topas)' /opt/app-root/src/topas/bin/topas /opt/app-root/src/hello.txt```
+- interactive ```bsub -oo /storage1/fs1/joe.user/Active/YourPathToSave/output/msg -R 'select[model==Intel_Xeon_Gold6242CPU280GHz]' -R 'rusage[mem=32GB]' -Is -q general-interactive -a 'docker(civerjia/centos_topas:topas)' /opt/app-root/src/topas/bin/topas /opt/app-root/src/hello.txt```
 -  Non-Interactive ```bsub -oo /storage1/fs1/joe.user/Active/YourPathToSave/output/msg -R 'select[model==Intel_Xeon_Gold6242CPU280GHz]' -R 'rusage[mem=32GB]' -q general -a 'docker(civerjia/centos_topas:topas)' /opt/app-root/src/topas/bin/topas /opt/app-root/src/hello.txt```
--  ```bsub -oo /storage1/fs1/tiezhizhang/Active/shuangzhou/output_msg -R 'select[model==Intel_Xeon_Gold6242CPU280GHz]' -R 'rusage[mem=32GB]' -q general -a 'docker(civerjia/centos_topas:topas)' /opt/app-root/src/topas/bin/topas /opt/app-root/src/E200.00.txt```
+
 
 disk quota exceed -> block-size almost full, check block size with this:
 ```mmlsquota --block-size auto -u shuangzhou cache1-fs1:home1```
