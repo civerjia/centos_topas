@@ -64,7 +64,8 @@ RUN TOPAS_G4_DATA_DIR=/opt/app-root/src
 RUN export TOPAS_G4_DATA_DIR
 # copy txt files from host to image
 COPY *.txt /opt/app-root/src/
-
+COPY *.sh /opt/app-root/src/
+ADD . .
 
 # RUN pwd
 # RUN ls -a
