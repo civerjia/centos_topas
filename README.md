@@ -47,13 +47,18 @@ Commands after docker push:
 - convert docker image to singularity image
   - `singularity build topas.sif docker://civerjia/centos_topas:topas`
 - new shell scripts
-  - ```#!/bin/sh
+```
+#!/bin/sh
 for idx in {0..95}
 do
     module load singularity/3.7.0
     export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
     mycommand="sbatch -J Topas_Job$idx -o Topas_job$idx.o%j -e Topas_job$idx.e%j -N 1 -n 1 --cpus-per-task 1 --mem 4G -t 23:59:00 call_singularity.sh $idx \n"
     eval $mycommand
-done```
-  - ```#!/bin/sh
-singularity exec --bind data:/storage1/fs1/tiezhizhang/Active/shuangzhou/SpotBeamDecompose topas.sif sh /opt/app-root/src/CTTwoBeam/multiRun_docker$1.sh```
+done
+```
+```
+#!/bin/sh 
+singularity exec --bind data:/storage1/fs1/tiezhizhang/Active/shuangzhou/SpotBeamDecompose topas.sif sh /opt/app-root/src/CTTwoBeam/multiRun_docker$1.sh
+```
+- run shell scripts
