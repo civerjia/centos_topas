@@ -65,6 +65,7 @@ RUN export TOPAS_G4_DATA_DIR
 # copy txt files from host to image
 COPY *.txt /opt/app-root/src/
 COPY *.sh /opt/app-root/src/
+# add everything in pwd of host to pwd in image
 ADD . .
 
 # RUN pwd
