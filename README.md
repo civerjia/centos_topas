@@ -45,6 +45,7 @@ CHPC reference:
 - https://sites.wustl.edu/chpc/for-users/frequently-asked-questions-faq/docker-images-2/
 - https://sites.wustl.edu/chpc/for-users/frequently-asked-questions-faq/docker-images-1/
 - https://sites.wustl.edu/chpc/for-users/getting-started/beginner-guides/
+
 Commands after docker push:
 - login CHPC
 - cd /scratch/your_username
